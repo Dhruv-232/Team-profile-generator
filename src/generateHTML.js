@@ -4,6 +4,8 @@ function makeTeam(team) {
     teamHTML.push(team
         .filter(e => e.getRole() === "Manager")
         .map(m => createManagerCard(m)))
+
+    return teamHTML.join("");
 }
 
 function createManagerCard(m) {
