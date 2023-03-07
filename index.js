@@ -115,6 +115,15 @@ function addMembers() {
         }
     })
 }
+
+function addEngineer() {
+    inquirer.prompt(engineerQuestions).then(function (data) {
+        console.log("data =", data)
+        let e1 = new Engineer(data.engineer_name, data.engineer_id, data.engineer_email, data.github);
+        team.push(e1);
+        addMembers();
+    });
+}
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data);
