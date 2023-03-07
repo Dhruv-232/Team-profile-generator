@@ -124,6 +124,15 @@ function addEngineer() {
         addMembers();
     });
 }
+
+function addIntern() {
+    inquirer.prompt(internQuestions).then(function (data) {
+        console.log("data =", data)
+        let i1 = new Intern(data.intern_name, data.intern_id, data.intern_email, data.school);
+        team.push(i1);
+        addMembers();
+    });
+}
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data);
