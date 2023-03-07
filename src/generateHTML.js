@@ -42,7 +42,7 @@ function createEngineerCard(e) {
             <ul class="list-group">
                 <li class="list-group-item">ID: ${e.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${e.getEmail()}">${e.getEmail()}</a></li>
-                <li class="list-group-item">Office number: ${e.getOfficeNumber()}</li>
+                <li class="list-group-item">Office number: ${e.getGithub()}</li>
             </ul>
         </div>
     </div>
