@@ -33,6 +33,54 @@ const managerQuestions = [
 
 ];
 
+const engineerQuestions = [
+    {
+        type: 'input',
+        message: 'What is your name (engineer)?',
+        name: 'engineer_name'
+    },
+    {
+        type: 'input',
+        message: 'What is your engineer ID?',
+        name: 'engineer_id'
+    },
+    {
+        type: 'input',
+        message: 'What is your engineer email?',
+        name: 'engineer_email'
+    },
+    {
+        type: 'input',
+        message: 'What is your engineer github?',
+        name: 'github'
+    },
+
+];
+
+const internQuestions = [
+    {
+        type: 'input',
+        message: 'What is your name (intern)?',
+        name: 'intern_name'
+    },
+    {
+        type: 'input',
+        message: 'What is your intern ID?',
+        name: 'intern_id'
+    },
+    {
+        type: 'input',
+        message: 'What is your intern email?',
+        name: 'intern_email'
+    },
+    {
+        type: 'input',
+        message: 'What is your intern school?',
+        name: 'school'
+    },
+
+];
+
 function buildManager() {
     inquirer.prompt(managerQuestions).then(function (data) {
         console.log("data =", data)
@@ -43,7 +91,7 @@ function buildManager() {
 }
 
 function addMembers() {
-    // Tobe completed
+    // To be completed
 }
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
