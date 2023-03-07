@@ -1,32 +1,4 @@
-function makeTeam(team) {
-    let teamHTML = [];
 
-    teamHTML.push(team
-        .filter(e => e.getRole() === "Manager")
-        .map(m => createManagerCard(m)))
-}
-
-function createManagerCard(m) {
-    return `
-        <div class="card employee-card">
-        <div class="card-header">
-            <h2 class="card-title">${m.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${m.getRole()}</h3>
-        </div>
-        <div class="card-body">
-            <ul class="list-group">
-                <li class="list-group-item">ID: ${m.getId()}</li>
-                <li class="list-group-item">Email: <a href="mailto:${m.getEmail()}">${m.getEmail()}</a></li>
-                <li class="list-group-item">Office number: ${m.getOfficeNumber()}</li>
-            </ul>
-        </div>
-    </div>
-        `;
-
-}
-
-function createHTML(team) {
-    return `
     <!DOCTYPE html>
 <html lang="en">
 
@@ -51,13 +23,10 @@ function createHTML(team) {
     <div class="container">
         <div class="row">
             <div class="team-area col-12 d-flex justify-content-center">
-                ${makeTeam(team)}
+                undefined
             </div>
         </div>
     </div>
 </body>
 </html>
-    `;
-}
-
-module.exports = createHTML;
+    
