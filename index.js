@@ -87,15 +87,37 @@ function buildManager() {
         let m1 = new Manager(data.manager_name, data.manager_id, data.manager_email, data.office_number);
         team.push(m1);
         addMembers();
-    });    
+    });
 }
 
 function addMembers() {
-    // To be completed
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "selection",
+            message: "Who would you like to add?",
+            choices: ["Engineer", "Intern", "done adding, create page"]
+        }
+    ]).then(resp => {
+        switch (resp.selection) {
+            case "Engineer":
+                addEngineer();
+                break;
+
+            case "Intern":
+                addIntern();
+                break;
+
+            default:
+                createTeam();
+                break;
+
+        }
+    })
 }
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFileSync(fileName, data); 
+    fs.writeFileSync(fileName, data);
 }
 
 // TODO: Create a function to initialize app
@@ -103,6 +125,6 @@ function init() {
     inquirer.prompt(questions).then(function (data) {
         console.log("data =", data)
         var fileName = 'generatedREADME.md';
-        writeToFile(fileName, generateMd({...data}))
+        writeToFile(fileName, generateMd({ ...data }))
     });
 }
