@@ -133,16 +133,17 @@ function addIntern() {
         addMembers();
     });
 }
-// TODO: Create a function to write README file
+
 function writeToFile(fileName, data) {
-    fs.writeFileSync(fileName, data);
+    fs.writeFileSync(fileName, data, "utf-8");
 }
 
-// TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions).then(function (data) {
-        console.log("data =", data)
-        var fileName = 'generatedREADME.md';
-        writeToFile(fileName, generateMd({ ...data }))
-    });
+function createTeam() {
+    if (!fs.existsSync(DIST_DIR)){
+        fs.mkdirSync(DIST_DIR)
+    }
+    
+        
+        writeToFile(distPath, createHTML(team))
+    
 }
