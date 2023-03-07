@@ -9,6 +9,10 @@ function makeTeam(team) {
         .filter(e => e.getRole() === "Engineer")
         .map(e => createEngineerCard(e)))
 
+    teamHTML.push(team
+        .filter(e => e.getRole() === "Intern")
+        .map(e => createInternCard(e)))
+
     return teamHTML.join("");
 }
 
@@ -47,6 +51,24 @@ function createEngineerCard(e) {
         </div>
     </div>
         `;
+}
+
+function createInternCard(e) {
+return `
+    <div class="card employee-card">
+    <div class="card-header">
+        <h2 class="card-title">${e.getName()}</h2>
+        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${e.getRole()}</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: ${e.getId()}</li>
+            <li class="list-group-item">Email: <a href="mailto:${e.getEmail()}">${e.getEmail()}</a></li>
+            <li class="list-group-item">Office number: ${e.getSchool()}</li>
+        </ul>
+    </div>
+</div>
+    `;
 
 }
 
