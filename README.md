@@ -27,3 +27,4 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 
 # Walkthrough Video
+[New Recording - 12_03_2023, 15_35_36.webm](https://user-images.githubusercontent.com/118102311/224524716-333fdbdf-1bff-4ee9-9e95-eedc10fbbc38.webm)
